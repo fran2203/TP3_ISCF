@@ -8,19 +8,19 @@ void setup() {
   pinMode(PinSalida, OUTPUT);
   digitalWrite(LED, HIGH);
 }
-//0,1875 micros / iteracion -> 5.333.333 iteraciones
+//0,1875 micros / iteracion -> 5.333 iteraciones para 1 s
 void loop() {
-  for(int i = 0; i<5300; ++i){
-
+  if(digitalRead(SensorOptico)==HIGH){
+    digitalWrite(LED, HIGH);
+    digitalWrite(PinSalida, HIGH);
+  } else{
+    digitalWrite(LED, LOW);
+    digitalWrite(PinSalida, HIGH);
+    for(int i = 0; i<5300;++i){
+    }
+    digitalWrite(LED, HIGH);
+    digitalWrite(PinSalida, LOW);
+    for(int i = 0; i<5300;++i){
+    }
   }
-  digitalWrite(PinSalida, HIGH);
-  digitalWrite(LED, LOW);
-
-  for(int i = 0; i<5300; ++i){
-    
-  }
-
-  digitalWrite(PinSalida, LOW);
-  digitalWrite(LED, HIGH);
-
 }
